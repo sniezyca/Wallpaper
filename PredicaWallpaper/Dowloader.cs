@@ -13,6 +13,7 @@ namespace PredicaWallpaper
     {
         public Dowloader(string path)
         {
+            // specify where image should be saved
             string name = "wallpaper.jpg";
             FilePath = Path.Combine(path,name);
            
@@ -29,28 +30,24 @@ namespace PredicaWallpaper
 
                 var webclient = new WebClient();
 
-                // downloads data from adress and returns byte array
+                // download data from adress and return byte array
                 byte[] buffer = webclient.DownloadData(url);
 
                 // load into xml file
                 var xml = new XmlDocument();
                 xml.Load(new MemoryStream(buffer));
 
-                string snode = xml.SelectSingleNode(@"/images/image/urlBase/text()").Value;
-                
+                // get the url of image
+                string snode = xml.SelectSingleNode(@"/images/image/urlBase/text()").Value;                
                 string imuri = string.Format(@"http://www.bing.com{0}_1920x1080.jpg", snode);
-
-                //string saveSpot = Path.Combine(FolderPath, Path.GetFileName(new Uri(imuri).LocalPath));
-
+                
                 DownloadImage(FilePath, imuri);
 
             }
             catch (Exception)
             {
                 Environment.Exit(0);
-            }
-
-
+            }            
         }
 
         public void DownloadImage(string saveSpot, string downloadSpot)
@@ -60,7 +57,6 @@ namespace PredicaWallpaper
                 var client = new WebClient();
 
                 client.DownloadFile(downloadSpot, saveSpot);
-
             }
             catch (Exception)
             {

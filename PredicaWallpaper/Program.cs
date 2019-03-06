@@ -11,28 +11,22 @@ namespace PredicaWallpaper
     {
         static void Main(string[] args)
         {
-            var bd = new Dowloader(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+            // download and save wallpaper
+            var dow = new Dowloader(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+            dow.SaveWallpaper();
 
-            bd.SaveWallpaper();
+            // set saved image as wallpaper     
+            SetImageAsWallpaper(dow.FilePath);
 
-
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "\\Koala.jpg";
-
-            
-
-            
-
-
-            SetImageAsWallpaper(bd.FilePath);
-
-            //Console.Out.WriteLine(bd.FilePath);
-
+            // wait for a bit before deleting the picture
             System.Threading.Thread.Sleep(500);
-            File.Delete(bd.FilePath);
+            File.Delete(dow.FilePath);
 
+            // shortcut - change wallpaper for tests
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "\\Koala.jpg";
             //SetImageAsWallpaper(path);
         }
-        
+
         private static void SetImageAsWallpaper (string path)
         {
             try
