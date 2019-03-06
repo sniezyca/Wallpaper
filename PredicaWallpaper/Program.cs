@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace PredicaWallpaper
@@ -17,6 +13,7 @@ namespace PredicaWallpaper
 
             // set saved image as wallpaper     
             SetImageAsWallpaper(dow.FilePath);
+           
 
             // wait for a bit before deleting the picture
             System.Threading.Thread.Sleep(500);
