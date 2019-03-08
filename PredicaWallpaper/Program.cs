@@ -30,7 +30,7 @@ namespace PredicaWallpaper
         public static void Autostart()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-            reg.SetValue("My app", Assembly.GetExecutingAssembly().Location);
+            reg.SetValue("Wallpaper app", Assembly.GetExecutingAssembly().Location);
 
         }
         
