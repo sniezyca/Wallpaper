@@ -3,6 +3,7 @@ using System.Net;
 using System.Xml;
 using System.IO;
 
+
 namespace PredicaWallpaper
 {
     public class Dowloader
@@ -10,9 +11,8 @@ namespace PredicaWallpaper
         public Dowloader(string path)
         {
             // specify where image should be saved
-            string name = "wallpaper.jpg";
-            FilePath = Path.Combine(path,name);
-           
+            string name = "BingWallpaper_" + DateTime.Now.ToString("dd_MM_yyyy")+".jpg" ;
+            FilePath = Path.Combine(path,name);                     
         }
         
         public string FilePath { get; set;}

@@ -1,6 +1,4 @@
-﻿// source: https://bitbucket.org/ciniml/desktopwallpaper/src/8bb207967b68?at=master
-
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 
 namespace PredicaWallpaper
