@@ -20,10 +20,7 @@ namespace PredicaWallpaper
             
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop", true);
             
-            SystemParametersInfo(SPI_SETDESKWALLPAPER,
-                0,
-                path,
-                SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
+            SystemParametersInfo(SPI_SETDESKWALLPAPER,0,path,SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
         }
     }
 }

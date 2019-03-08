@@ -59,9 +59,7 @@ namespace PredicaWallpaper
                 Environment.Exit(0);
             }
         }
-
-
-        
+                       
     }
     
 }

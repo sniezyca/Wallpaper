@@ -24,24 +24,9 @@ namespace PredicaWallpaper
             wp.Set(dow.FilePath);
 
             Autostart();
-            
-                       
+                                   
         }
 
-        //private static void SetImageAsWallpaper (string path)
-        //{
-        //    try
-        //    {
-        //        var wallpaper = (IDesktopWallpaper)(new DesktopWallpaperClass());
-        //
-        //        wallpaper.SetWallpaper(null, path);
-        //    }
-        //    catch
-        //    {
-        //        Environment.Exit(0);
-        //    }
-        //                
-        // }
         public static void Autostart()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
